@@ -11,10 +11,11 @@ import net.thucydides.core.annotations.DefaultUrl;
 @At("https://www.tinkoff.ru/payments/")
 public class PaymentsPage extends PageObject {
 
-    @FindBy(xpath = "//div[@aria-label='ЖКХ' and @data-qa-file='PaymentsCategoryItem']/a")
+    @FindBy(xpath = "//div[@aria-label='ЖКХ' and @data-qa-file='PaymentsCategoryItem']")
     private WebElementFacade communalPaymentsLink;
 
     public void navigate_communal_payments() {
+        communalPaymentsLink.waitUntilClickable();
         communalPaymentsLink.click();
     }
 

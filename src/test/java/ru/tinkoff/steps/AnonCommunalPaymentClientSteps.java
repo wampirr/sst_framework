@@ -2,7 +2,8 @@ package ru.tinkoff.steps;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
-import net.thucydides.core.webdriver.ThucydidesWebDriverSupport;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import ru.tinkoff.pages.CommunalPaymentsPage;
 import ru.tinkoff.pages.MainPage;
 import ru.tinkoff.pages.PaymentsPage;
@@ -60,7 +61,7 @@ public class AnonCommunalPaymentClientSteps extends ScenarioSteps {
 
     @Step
     public void is_current_page_at(String url) {
-        assertEquals(url, ThucydidesWebDriverSupport.getDriver().getCurrentUrl());
+        new WebDriverWait(pages().getDriver(), 10).until(ExpectedConditions.urlToBe(url));
     }
 
     @Step

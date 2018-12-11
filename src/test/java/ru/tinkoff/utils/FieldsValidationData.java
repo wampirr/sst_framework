@@ -18,6 +18,7 @@ public class FieldsValidationData {
 
     public static void tryBadInputsAndCheckErrors(WebElementFacade inputField, WebElementFacade errorField, List<Pair<String, String>> inputsAndErrors) {
         for (Pair<String, String> pair : inputsAndErrors) {
+            inputField.waitUntilClickable();
             inputField.typeAndEnter(pair.getKey());
             assertEquals(pair.getValue(), errorField.getText());
             inputField.clear();

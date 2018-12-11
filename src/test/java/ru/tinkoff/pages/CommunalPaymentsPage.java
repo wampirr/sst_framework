@@ -26,6 +26,7 @@ public class CommunalPaymentsPage extends PageObject {
     }
 
     public String change_communal_payments_region_to(String newRegion, String newRegionCasedResult) {
+        communalRegionElement.waitUntilClickable();
         communalRegionElement.click();
 
         WebElementFacade wantedRegion = this.findBy("//a/span[@class = 'ui-link__text' and text()='" + newRegion + "']");
@@ -41,6 +42,7 @@ public class CommunalPaymentsPage extends PageObject {
     }
 
     public void navigate_to_communal_payment_provider(int pos) {
+        allCommunalProviders.get(pos).waitUntilClickable();
         allCommunalProviders.get(pos).click();
     }
 
@@ -56,7 +58,7 @@ public class CommunalPaymentsPage extends PageObject {
     }
 
     public void navigate_fast_search_first_local_provider() {
-        fastSearchPaymentsField.click();
+        firstFastFoundProvider.click();
     }
 
     public boolean text_in_page_found(String text) {

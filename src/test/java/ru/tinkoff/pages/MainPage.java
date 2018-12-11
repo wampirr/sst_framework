@@ -15,6 +15,7 @@ public class MainPage extends PageObject {
     private WebElementFacade paymentLink;
 
     public void navigate_payments() {
+        paymentLink.waitUntilClickable();
         paymentLink.click();
     }
 

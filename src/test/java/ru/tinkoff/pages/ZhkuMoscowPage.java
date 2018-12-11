@@ -49,11 +49,11 @@ public class ZhkuMoscowPage extends PageObject {
         period.typeAndEnter("10.2018");
 
         //todo GET THROUGH NOT VISIBLE EX
-        FieldsValidationData.tryBadInputsAndCheckErrors(paymentSum, paymentSumUIFormRowError, FieldsValidationData.paySum15kLimit);
+//        FieldsValidationData.tryBadInputsAndCheckErrors(paymentSum, paymentSumUIFormRowError, FieldsValidationData.paySum15kLimit);
 
         //чтобы страховая могла быть больше и выдать ошибку
-        paymentSum.typeAndEnter("77");
-        FieldsValidationData.tryBadInputsAndCheckErrors(voluntarilyHousingInsurance, voluntarilyHousingInsuranceUIFormRowError, FieldsValidationData.voluntarilyHousingInsuranceSum);
+//        paymentSum.typeAndEnter("77");
+//        FieldsValidationData.tryBadInputsAndCheckErrors(voluntarilyHousingInsurance, voluntarilyHousingInsuranceUIFormRowError, FieldsValidationData.voluntarilyHousingInsuranceSum);
 
     }
 }
